@@ -1,0 +1,10 @@
+numpy
+streamlit
+streamlit_webrtc
+av
+regex
+opencv-python-headless
+typing
+pytesseract
+spacy
+
