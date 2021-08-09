@@ -6,5 +6,4 @@ regex
 opencv-python-headless
 typing
 pytesseract
-spacy
-
+spacy==2.3.5
