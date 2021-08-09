@@ -30,8 +30,9 @@ def main():
             return in_image
 
     ctx = webrtc_streamer(key='snapshot', video_processor_factory=VideoTransformer)
-
-    NER_model = spacy.load('Username_NER')
+    
+    nlp = spacy.blank('en')
+    NER_model = np.from_disk('Username_NER')
 
     if ctx.video_transformer:
         if st.button('Snapshot'):
