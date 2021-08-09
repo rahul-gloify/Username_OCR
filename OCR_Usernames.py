@@ -32,7 +32,7 @@ def main():
     ctx = webrtc_streamer(key='snapshot', video_processor_factory=VideoTransformer)
     
     nlp = spacy.blank('en')
-    NER_model = nlp.from_disk('Username_NER')
+    NER_model = nlp.from_disk('./Username_NER')
 
     if ctx.video_transformer:
         if st.button('Snapshot'):
