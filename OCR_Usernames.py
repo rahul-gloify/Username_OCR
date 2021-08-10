@@ -14,14 +14,13 @@ from streamlit_webrtc import (RTCConfiguration,
                               webrtc_streamer
 )
 
-# pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
 
 RTC_CONFIGURATION = RTCConfiguration(
     rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
 )
 
-def main():
-    class VideoTransformer(VideoProcessorBase):
+class VideoTransformer(VideoProcessorBase):
         frame_lock: threading.Lock
         in_image: Union[np.ndarray, None]   
         
@@ -37,6 +36,7 @@ def main():
 
             return in_image
 
+def main():
     ctx = webrtc_streamer(key='snapshot',
                           video_processor_factory=VideoTransformer,
                           mode = WebRtcMode.SENDRECV,
@@ -46,7 +46,7 @@ def main():
     # nlp = spacy.blank('en')
     NER_model = spacy.load('./Username_NER')
 
-    if ctx.video_transformer:
+    if ctx.video_processor:
         if st.button('Snapshot'):
             with ctx.video_transformer.frame_lock:
                 in_image = ctx.video_transformer.in_image
@@ -88,7 +88,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-                    
-
