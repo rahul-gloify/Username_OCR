@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run --server.port $PORT app.py
+web: streamlit run --server.port $PORT OCR_Usernames.py
