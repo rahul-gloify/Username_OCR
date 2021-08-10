@@ -28,13 +28,13 @@ class VideoTransformer(VideoProcessorBase):
             self.frame_lock = threading.Lock()
             self.in_image = None
 
-        def transform(self, frame:av.VideoFrame) -> np.ndarray:
+        def recv(self, frame:av.VideoFrame) -> av.VideoFrame:
             in_image = frame.to_ndarray(format='bgr24')       
             
             with self.frame_lock:
                 self.in_image = in_image
 
-            return in_image
+            return av.VideoFrame.from_ndarray(in_image,format="bgr24")
 
 def main():
     ctx = webrtc_streamer(key='snapshot',
