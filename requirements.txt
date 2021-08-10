@@ -8,3 +8,4 @@ opencv-python-headless==4.5.3.56
 typing_extensions==3.10.0.0
 pytesseract==0.3.8
 spacy==2.3.5
+pillow==7.1.2
