@@ -4,7 +4,6 @@ import av
 import numpy as np
 import cv2
 import re
-import os,io
 import pytesseract
 import streamlit as st
 import spacy
