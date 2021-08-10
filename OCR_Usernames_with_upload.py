@@ -133,7 +133,7 @@ def upload_extract():
 def main():
 
     st.header('Extract the Username')
-    mode = st.sidebar.selectbox('Select a model',
+    mode = st.sidebar.selectbox('Select a mode',
                                 ['Click a picture', 'Upload a picture'])
     
     if mode == 'Click a picture':
