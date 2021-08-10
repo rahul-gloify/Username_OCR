@@ -4,6 +4,6 @@ streamlit_webrtc==0.26.0
 av==8.0.3
 regex==2021.7.6
 opencv-python-headless
-typing==3.10.0.0
+typing==3.7.4.3
 pytesseract==0.3.8
 spacy==2.3.5
